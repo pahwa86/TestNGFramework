@@ -20,7 +20,6 @@ public class FBSignUPXPath {
 	@Test
 	public static void webelements ()
 	{
-		driver.
 	}
 	
 }
