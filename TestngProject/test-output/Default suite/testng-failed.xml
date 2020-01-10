@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testpackage.FBSignUPXPath">
+      <class name="testpackage.TC3">
         <methods>
-          <include name="method1"/>
+          <include name="browseropen"/>
+          <include name="browserclose"/>
+          <include name="playvideoandlike"/>
         </methods>
-      </class> <!-- testpackage.FBSignUPXPath -->
+      </class> <!-- testpackage.TC3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
