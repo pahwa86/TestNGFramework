@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testpackage.FBSignUPXPath"/>
+      <class name="testpackage.TestNGBasicAnnotations"/>
+      <class name="testpackage.TC1"/>
+      <class name="testpackage.TC2"/>
+      <class name="testpackage.TC3"/>
+      <class name="testpackage.TC4"/>
+      <class name="testpackage.TC5"/>
+      <class name="testpackage.TC6"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
