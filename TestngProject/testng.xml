@@ -3,14 +3,16 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testpackage.FBSignUPXPath"/>
-      <class name="testpackage.TestNGBasicAnnotations"/>
-      <class name="testpackage.TC1"/>
-      <class name="testpackage.TC2"/>
-      <class name="testpackage.TC3"/>
-      <class name="testpackage.TC4"/>
-      <class name="testpackage.TC5"/>
-      <class name="testpackage.TC6"/>
+      <class name="testscript.FBSignUPXPath"/>
+      <class name="testscript.YouTubeExplicitWait"/>
+      <class name="testscript.TestNGBasicAnnotations"/>
+      <class name="testscript.TC6"/>
+      <class name="testscript.TC3"/>
+      <class name="testscript.TC2"/>
+      <class name="testscript.TC5"/>
+      <class name="testscript.TC4"/>
+      <class name="testscript.TC1"/>
+      <class name="testscript.YouTubeImplicitWait"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

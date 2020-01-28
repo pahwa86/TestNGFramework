@@ -1,15 +1,22 @@
 package pages;
 
+import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VideoPlayPage {
 	
     FirefoxDriver driver;
     Properties pr;
-	
+    int count = 0;
     public VideoPlayPage (FirefoxDriver driver, Properties prop)
 	{
 		
@@ -25,11 +32,51 @@ public class VideoPlayPage {
 		like.click();
 	}
 	
-	public void SubscribeVideos()
+	public void SubscribeVideos() throws InterruptedException 
 	{
 		// Subscribe the video played
-		WebElement subscribe = driver.findElementByXPath(pr.getProperty("//*[@class='style-scope ytd-subscribe-button-renderer' and @role='button']"));
-		subscribe.click();
-		
+		WebElement subscribe = driver.findElementByXPath(pr.getProperty("Subscribe"));
+		String text = subscribe.getText();
+		System.out.println("*******" + "Text found is " + text + "************");
+		Thread.sleep(10000);	
+		if (text.equals("SUBSCRIBE"))
+		{
+			System.out.println("Please Subscribe the Video");
+			subscribe.click();
+		}
+		else
+		{
+			System.out.println("This video is alreay subscribed. Please unsubscribe then subscribe again");
+		    subscribe.click();
+			WebElement unsubscribe = driver.findElementByXPath(pr.getProperty("UnSubscribeButton"));
+			unsubscribe.click();
+		    subscribe.click();
+		}
 	}
+	
+	public void SubscribeAllVideos() throws InterruptedException
+	{
+	   List<WebElement> wb = driver.findElementsByXPath(pr.getProperty("VideoPlay"));   
+	   for (WebElement element : wb)
+	   {  
+		   Thread.sleep(4000);
+		   element.click();
+		   Thread.sleep(5000);
+		    WebElement subscribe = driver.findElementByXPath(pr.getProperty("Subscribe"));
+			String text = subscribe.getText();
+			System.out.println("*******" + "Text found is " + text + "************");
+		   if (text.equalsIgnoreCase("Subscribed"))
+		   {
+			   System.out.println("Video is already Subscribed");
+			   driver.navigate().back();  
+		   }
+		   else
+		   {
+			   System.out.println("Please subscribe the video");
+			   subscribe.click();
+			   break;
+		   }
+	   }
+	}
+	
 }
