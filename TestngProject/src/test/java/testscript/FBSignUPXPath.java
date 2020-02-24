@@ -1,4 +1,4 @@
-package testpackage;
+package testscript;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -76,6 +76,7 @@ public class FBSignUPXPath
        
        // Click Sign Up button
        WebElement submit = driver.findElementByXPath("//button[@name='websubmit']");
+       submit.click();
        
 	}  
 	

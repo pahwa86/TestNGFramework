@@ -22,16 +22,17 @@ public class TC4 extends Base{
 			login.UsernameAndPassworInput("dtjavatraining.2019@gmail.com", "Javatraining@2019");
 			String expected_url="https://www.youtube.com/";
 	        Assert.assertEquals(driver.getCurrentUrl(), expected_url);
-	 /*      
+	       
 		// Play Video on Home Page
 			HomePage home = new HomePage(driver, pr);
 			home.PlayVideoHomePage();
-		*/
+		
 		// Subscribe the  Video played
 			VideoPlayPage playvideo = new VideoPlayPage(driver, pr);
-			//playvideo.SubscribeVideos();
+	        playvideo.SubscribeVideos();
 			
-			playvideo.SubscribeAllVideos();
+	        // Below method to traverse the vidoes on Home page and check if its subscribed or not
+			//playvideo.SubscribeAllVideos();
 		
 	}
 
